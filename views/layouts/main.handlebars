@@ -15,9 +15,9 @@
       <h1>The Tech Blog</h1>
       <nav>
         <a href="/">Home</a>
-        <a href="/dashboard">Dashboard</a>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
+        <a href="/dashboard">Dashboard</a>
         <button class="no-button" id="logout">Logout</button>
         {{else}}
         <a href="/login">Login</a>
