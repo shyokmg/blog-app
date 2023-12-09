@@ -3,23 +3,27 @@
       <h1><span class="navbar-brand badge bg-secondary">Your Dashboard</span></h1>
   </div>
 </nav>
-<div class="row">
-  <div class="col-md-6">
-    <h2 class="text-color">Create New Post</h2>
-
-    <form class="form createpost-form">
-      <div class="form-group">
-        <label class="text-color" for="title-createpost">Title</label>
-        <input class="form-input" type="text" id="title-createpost" />
+  <div class="d-flex justify-content-center">
+    <div class="card w-75 mb-3 m-2">
+      <div class="card-header d-flex justify-content-between text-decoration-none">
+        <h5>Create New Post</h5>
       </div>
-      <div class="form-group">
-        <label class="text-color" for="content-createpost">Content</label>
-        <textarea class="form-input" type="text" id="content-createpost"></textarea>
+      <div class="card-body">
+        <form class="form createpost-form">
+          <div class="form-group mb-3">
+            <label for="title-createpost" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title-createpost">
+          </div>
+          <div class="form-group mb-3">
+                    <label for="content-createpost" class="form-label">Content</label>
+                    <textarea class="form-control" id="content-createpost" rows="3"></textarea>
+                </div>
+          <div class="form-group d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Create</button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary text-color" type="submit">Create</button>
-      </div>
-    </form>
+    </div>
   </div>
 
 <script src="/js/createpost.js"></script>
