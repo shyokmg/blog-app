@@ -9,13 +9,13 @@
       </div>
       <div class="form-group">
         <label class="text-color" for="content-editpost">Content</label>
-        <textarea class="form-input" type="text" id="content-editpost">{{content}}</textarea>
+        <textarea class="form-input" type="text" data-id="{{id}}" id="content-editpost">{{content}}</textarea>
       </div>
       <div class="form-group">
-        <button class="btn btn-primary text-color" data-id="{{id}}" type="submit">Update Post</button>
+        <button class="btn btn-primary text-color" type="submit">Update Post</button>
         <button class="btn btn-sm btn-danger" data-id="{{id}}">Delete</button>
       </div>
     </form>
   </div>
 
-<script src="./js/editpost.js"></script>
+<script src="/js/editpost.js"></script>

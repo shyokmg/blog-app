@@ -9,23 +9,25 @@
     </p>
     <p>-{{this.user.username}}, {{format_date this.date_created}}</p>
     {{/each}}
+        {{#if logged_in}}
     <p>
     <div class="col-md-6">
         <h2>Comment</h2>
 
         <form class="form comment-form">
             <div class="form-group">
-                <textarea class="form-input" type="text" id="comment"></textarea>
+                <textarea class="form-input" type="text" data-id="{{id}}" id="comment"></textarea>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" type="submit">Submit</button>
+                {{!-- <button class="btn btn-primary" type="submit">Submit</button> --}}
+                <button class="btn btn-primary text-color" type="submit">Submit</button>
             </div>
         </form>
     </div>
-        {{#if logged_in}}
 
     {{else}}
 
-    {{/if}}
     </p>
+    {{/if}}
 </div>
+<script src="/js/comment.js"></script>
