@@ -11,10 +11,17 @@ const signupFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
-        document.location.replace('/');
+      if (response.status >= 200 && response.status <= 299) {
+        document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
+        let errorMessage = 'Failed to sign up';
+        if (response.status !== 500) {
+          const errorData = await response.json();
+          if (errorData && errorData.message) {
+            errorMessage = `Failed to sign up: ${errorData.message}`;
+          }
+        }
+        alert(errorMessage);
       }
     }
   };

@@ -3,24 +3,28 @@
       <h1><span class="navbar-brand badge bg-secondary">The Tech Blog</span></h1>
   </div>
 </nav>
-<div class="row">
-  <div class="col-md-6">
-    <h2 class="text-color">Signup</h2>
-
-    <form class="form signup-form">
-      <div class="form-group">
-        <label class="text-color" for="username-signup">username:</label>
-        <input class="form-input" type="text" id="username-signup" />
+    <div class="d-flex justify-content-center">
+    <div class="card w-75 mb-3 m-2">
+      <div class="card-header d-flex justify-content-between text-decoration-none">
+        <h5>Sign Up</h5>
       </div>
-      <div class="form-group">
-        <label class="text-color" for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
+      <div class="card-body">
+        <form class="form signup-form">
+          <div class="form-group mb-3">
+            <label for="username-signup" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username-signup">
+          </div>
+          <div class="form-group mb-3">
+            <label for="password-signup" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password-signup">
+          </div>
+          <div class="form-group d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+          </div>
+        </form>
+        <a href="/login" class="text-decoration-none">Login instead</a>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary text-color" type="submit">Signup</button>
-      </div>
-    </form>
-    <a href="/login">Login instead</a>
+    </div>
   </div>
 
 <script src="/js/signup.js"></script>

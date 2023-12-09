@@ -12,12 +12,18 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
-      if (response.ok) {
-        // If successful, redirect the browser to the home page
+
+      if (response.status >= 200 && response.status <= 299) {
         document.location.replace('/dashboard');
       } else {
-        alert(response.statusText);
+        let errorMessage = 'Failed to login';
+        if (response.status !== 500) {
+          const errorData = await response.json();
+          if (errorData && errorData.message) {
+            errorMessage = `Failed to login: ${errorData.message}`;
+          }
+        }
+        alert(errorMessage);
       }
     }
   };

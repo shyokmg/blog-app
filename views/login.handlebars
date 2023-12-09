@@ -1,26 +1,31 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-      <h1><span class="navbar-brand badge bg-secondary">The Tech Blog</span></h1>
+    <h1><span class="navbar-brand badge bg-secondary">The Tech Blog</span></h1>
   </div>
 </nav>
-<div class="row">
-  <div class="col-md-6">
-    <h2 class="text-color">Login</h2>
-
-    <form class="form login-form">
-      <div class="form-group">
-        <label class="text-color" for="username-login">username:</label>
-        <input class="form-input" type="text" id="username-login" />
+  <div class="d-flex justify-content-center">
+    <div class="card w-75 mb-3 m-2">
+      <div class="card-header d-flex justify-content-between text-decoration-none">
+        <h5>Login</h5>
       </div>
-      <div class="form-group">
-        <label class="text-color" for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+      <div class="card-body">
+        <form class="form login-form">
+          <div class="form-group mb-3">
+            <label for="username-login" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username-login">
+          </div>
+          <div class="form-group mb-3">
+            <label for="password-login" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password-login">
+          </div>
+          <div class="form-group d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Login</button>
+          </div>
+        </form>
+        <a href="/signup" class="text-decoration-none">Sign up instead</a>
       </div>
-      <div class="form-group">
-        <button class="btn btn-primary text-color" type="submit">login</button>
-      </div>
-    </form>
-    <a href="/signup">Sign up instead</a>
+    </div>
   </div>
 
-<script src="/js/login.js"></script>
+
+  <script src="/js/login.js"></script>
