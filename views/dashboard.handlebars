@@ -7,7 +7,7 @@
 {{#each blogposts as |blogpost| }}
 <div class="d-flex justify-content-center">
   <div class="card w-75 mb-3 m-2">
-    <a href="/blogpost/{{blogpost.id}}" class="card-header d-flex justify-content-between text-decoration-none">
+    <a href="/editpost/{{blogpost.id}}" class="card-header d-flex justify-content-between text-decoration-none">
       <h5>{{blogpost.title}}</h5>
       <span class="text-muted small">{{format_date blogpost.date_created}}</span>
     </a>

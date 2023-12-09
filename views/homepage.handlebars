@@ -5,19 +5,17 @@
 </nav>
 
 <!-- Loop over each object in the blogposts array -->
-
-    {{#each blogposts as |blogpost| }}
-
-
+{{#each blogposts as |blogpost| }}
 <div class="d-flex justify-content-center">
   <div class="card w-75 mb-3 m-2">
     <a href="/blogpost/{{blogpost.id}}" class="card-header d-flex justify-content-between text-decoration-none">
       <h5>{{blogpost.title}}</h5>
-      <span class="text-muted small">Posted by {{blogpost.user.username}} on {{format_date blogpost.date_created}}</span>
+      <span class="text-muted small">Posted by {{blogpost.user.username}} on {{format_date
+        blogpost.date_created}}</span>
     </a>
     <div class="card-body">
       <p class="card-text">{{blogpost.content}}</p>
     </div>
   </div>
 </div>
-    {{/each}}
+{{/each}}

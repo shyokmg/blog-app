@@ -1,39 +1,59 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-      <h1><span class="navbar-brand badge bg-secondary">The Tech Blog</span></h1>
-  </div>
-</nav>
-
-<div class="text-center">
-    <h2>{{title}}</h2>
-    <p>Posted by {{user.username}} on {{format_date date_created}}</p>
-    <p>{{content}}</p>
-
-    {{#each comments }}
-    <p>
-        {{this.comment}}
-    </p>
-    <p>-{{this.user.username}}, {{format_date this.date_created}}</p>
-    {{/each}}
-        {{#if logged_in}}
-    <p>
-    <div class="col-md-6">
-        <h2>Comment</h2>
-
-        <form class="form comment-form">
-            <div class="form-group">
-                <textarea class="form-input" type="text" data-id="{{id}}" id="comment"></textarea>
-            </div>
-            <div class="form-group">
-                {{!-- <button class="btn btn-primary" type="submit">Submit</button> --}}
-                <button class="btn btn-primary text-color" type="submit">Submit</button>
-            </div>
-        </form>
+    <div class="container-fluid">
+        <h1><span class="navbar-brand badge bg-secondary">The Tech Blog</span></h1>
     </div>
-
-    {{else}}
-
-    </p>
-    {{/if}}
+</nav>
+<div class="d-flex justify-content-center">
+    <div class="card w-75 mb-3 m-2">
+        <div class="card-header d-flex justify-content-between text-decoration-none">
+            <h5>{{title}}</h5>
+            <span class="text-muted small">Posted by {{user.username}} on {{format_date
+                date_created}}</span>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{content}}</p>
+        </div>
+    </div>
 </div>
+
+{{#each comments }}
+<div class="d-flex justify-content-center">
+    <div class="card w-75 mb-3 m-2">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{this.comment}}</p>
+                <footer class="blockquote-footer">{{this.user.username}}, {{format_date this.date_created}}</footer>
+            </blockquote>
+        </div>
+    </div>
+</div>
+{{/each}}
+
+{{#if logged_in}}
+
+<div class="d-flex justify-content-center">
+    <div class="card w-75 mb-3 m-2">
+        <div class="card-header">
+        </div>
+        <div class="card-body">
+            <form class="form comment-form">
+                <div class="mb-3">
+                    <label for="comment" class="form-label">Comment</label>
+                    <textarea class="form-control" data-id="{{id}}" id="comment" rows="3"></textarea>
+                </div>
+                <div class="form-group d-grid gap-2">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{{else}}
+
+{{/if}}
+
 <script src="/js/comment.js"></script>
