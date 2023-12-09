@@ -1,29 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-      <h1><span class="navbar-brand badge bg-secondary">Your Dashboard</span></h1>
+    <h1><span class="navbar-brand badge bg-secondary">Your Dashboard</span></h1>
   </div>
 </nav>
-  <div class="d-flex justify-content-center">
-    <div class="card w-75 mb-3 m-2">
-      <div class="card-header d-flex justify-content-between text-decoration-none">
-        <h5>Edit Post</h5>
-      </div>
-      <div class="card-body">
-        <form class="form editpost-form">
-          <div class="form-group mb-3">
-            <label for="title-editpost" class="form-label" >Title</label>
-            <input type="text" class="form-control" id="title-editpost" value="{{title}}">
-          </div>
-          <div class="form-group mb-3">
-                    <label for="content-editpost" class="form-label">Content</label>
-                    <textarea class="form-control" id="content-editpost" data-id="{{id}}" rows="3">{{content}}</textarea>
-                </div>
-          <div class="form-group d-grid gap-2">
-            <button class="btn btn-primary" type="submit">Update Post</button>
-            <button class="btn btn-primary btn-danger" data-id="{{id}}">Delete</button>
-          </div>
-        </form>
-      </div>
+<div class="d-flex justify-content-center">
+  <div class="card w-75 mb-3 m-2">
+    <div class="card-header d-flex justify-content-between text-decoration-none">
+      <h5>Edit Post</h5>
+    </div>
+    <div class="card-body">
+      <form class="form editpost-form">
+        <div class="form-group mb-3">
+          <label for="title-editpost" class="form-label">Title</label>
+          <input type="text" class="form-control" id="title-editpost" value="{{title}}">
+        </div>
+        <div class="form-group mb-3">
+          <label for="content-editpost" class="form-label">Content</label>
+          <textarea class="form-control" id="content-editpost" data-id="{{id}}" rows="3">{{content}}</textarea>
+        </div>
+
+{{!-- Check if user is logged in and show update and delete button else prompt user to login page --}}
+        {{#if logged_in}}
+        <div class="form-group d-grid gap-2">
+          <button class="btn btn-primary" type="submit">Update Post</button>
+          <button class="btn btn-primary btn-danger" data-id="{{id}}">Delete</button>
+        </div>
+        {{else}}
+        <a href="/login" class="text-decoration-none">Login to edit or delete a post</a>
+        {{/if}}
+
+      </form>
     </div>
   </div>
+</div>
 <script src="/js/editpost.js"></script>

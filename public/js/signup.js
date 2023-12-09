@@ -1,9 +1,11 @@
 const signupFormHandler = async (event) => {
     event.preventDefault();
 
+    // Get user data
     const username = document.querySelector('#username-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
+    // Check if user data exists
     if (username && password) {
       const response = await fetch('/api/users', {
         method: 'POST',

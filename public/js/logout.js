@@ -4,6 +4,7 @@ const logout = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
   
+    // Redirect to home page once logged out
     if (response.ok) {
       document.location.replace('/');
     } else {

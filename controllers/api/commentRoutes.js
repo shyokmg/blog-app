@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
+// Create comment on posts with user id from session
 router.post('/', withAuth, async (req, res) => {
   try {
     const newComment = await Comment.create({
