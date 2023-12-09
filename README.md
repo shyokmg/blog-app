@@ -21,3 +21,4 @@ The underlying technologies used in this application are Express JS, MySQL, and 
 - [bcrypt](https://www.npmjs.com/package/bcrypt)
 
 ## Link to deployed Application
+- [Tech Blog App](https://techblog-app-shyo-5afd91631b2c.herokuapp.com/)
