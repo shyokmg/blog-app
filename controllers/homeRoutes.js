@@ -16,10 +16,8 @@ router.get('/', async (req, res) => {
 
         // Serialize data so the template can read it
         const blogposts = blogPostData.map((blogpost) => blogpost.get({ plain: true }));
-        const pageTitle = 'The Tech Blog';
         // Pass serialized data and session flag into template
         res.render('homepage', {
-            pageTitle,
             blogposts,
             logged_in: req.session.logged_in
         });
@@ -51,11 +49,9 @@ router.get('/blogpost/:id', async (req, res) => {
 
         const blogpost = blogPostData.get({ plain: true });
         const comments = commentData.map((comment) => comment.get({ plain: true }));
-        const pageTitle = 'The Tech Blog';
         res.render('blogpost', {
             ...blogpost,
             comments,
-            pageTitle,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -79,10 +75,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
         // Serialize data so the template can read it
         const blogposts = blogPostData.map((blogpost) => blogpost.get({ plain: true }));
-        const pageTitle = 'Your Dashboard';
         res.render('dashboard', {
             blogposts,
-            pageTitle,
             logged_in: true
         });
     } catch (err) {
@@ -91,8 +85,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 router.get('/createpost', (req, res) => {
-    const pageTitle = 'Your Dashboard';
-    res.render('createpost', {pageTitle, logged_in: true});
+    res.render('createpost', {logged_in: true});
 
 });
 
@@ -107,10 +100,8 @@ router.get('/editpost/:id', async (req, res) => {
             ],
         });
         const blogpost = blogPostData.get({ plain: true });
-        const pageTitle = 'Your Dashboard';
         res.render('editpost', {
             ...blogpost,
-            pageTitle,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -124,8 +115,7 @@ router.get('/login', (req, res) => {
         res.redirect('/');
         return;
     }
-    const pageTitle = 'The Tech Blog';
-    res.render('login', {pageTitle});
+    res.render('login');
 });
 
 router.get('/signup', (req, res) => {
@@ -134,8 +124,7 @@ router.get('/signup', (req, res) => {
         res.redirect('/login');
         return;
     }
-    const pageTitle = 'The Tech Blog';
-    res.render('signup', {pageTitle});
+    res.render('signup');
 });
 
 module.exports = router;
